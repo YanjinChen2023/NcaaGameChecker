@@ -1,0 +1,9 @@
+pip install datetime
+pip install mysql.connector
+pip install pandas
+pip install requests
+pip install numpy
+pip install bs4
+pip install sportsreference
+pip install sqlalchemy
+npm install chart.js
