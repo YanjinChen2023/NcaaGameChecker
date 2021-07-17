@@ -11,7 +11,7 @@ from sportsreference.ncaab.schedule import Schedule
 from sportsreference.ncaab.boxscore import Boxscore
 from sportsreference.ncaab.teams import Teams
 from sqlalchemy import create_engine
-from sqlalchemy.engine import URL
+# from sqlalchemy.engine import URL
 
 ### team_names = []
 ### team_abbri = []
