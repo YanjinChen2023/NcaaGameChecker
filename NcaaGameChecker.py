@@ -160,16 +160,16 @@ query1 = """SELECT * FROM NCAA.teams_mapped;"""
 mapped = pd.read_sql(query1, con=connection1)
 
 ##Looks for indexes of not empty table rows
-need_to_drop = []
-for i,x in enumerate(mapped['home_score']):
-    if (str(type(x)) != "<class 'NoneType'>") & (str(type(mapped['away_score'][i])) != "<class 'NoneType'>") &\
-    (str(type(mapped['final_result'][i])) != "<class 'NoneType'>") & \
-    (str(type(mapped['isCorrect'][i])) != "<class 'NoneType'>") & \
-    (str(type(mapped['isCloser'][i])) != "<class 'NoneType'>"):
-        need_to_drop.append(i)
+# need_to_drop = []
+# for i,x in enumerate(mapped['home_score']):
+#     if (str(type(x)) != "<class 'NoneType'>") and (str(type(mapped['away_score'][i])) != "<class 'NoneType'>") and\
+#     (str(type(mapped['final_result'][i])) != "<class 'NoneType'>") and \
+#     (str(type(mapped['isCorrect'][i])) != "<class 'NoneType'>") and \
+#     (str(type(mapped['isCloser'][i])) != "<class 'NoneType'>"):
+#         need_to_drop.append(i)
 
 ## This erases the rows where it already has something in the specified columns
-mapped = mapped.drop(need_to_drop,axis=0)
+#mapped = mapped.drop(need_to_drop,axis=0)
 
 ##awn_Name is the name of the teams from the workbench
 ##awn_NCAA_Team is the corresponding team names that the sportsreference can take
@@ -443,15 +443,15 @@ mapped.insert(11, 'final_result', final_result)
 
 ## Makes the array for the isCorrect column using the condition statements
 for i,x in enumerate(GameResult):
-    if (mapped['difference'][x[-1]]<0) & (final_result[x[-1]]<=mapped['difference'][x[-1]]):
+    if (mapped['difference'][x[-1]]<0) and (final_result[x[-1]]<=mapped['difference'][x[-1]]):
         isCorrect[x[-1]] = 1
-    elif (mapped['difference'][x[-1]]>0) & (final_result[x[-1]]>=mapped['difference'][x[-1]]):
+    elif (mapped['difference'][x[-1]]>0) and (final_result[x[-1]]>=mapped['difference'][x[-1]]):
         isCorrect[x[-1]] = 1
     elif (mapped['final_result'][x[-1]]>=mapped['spread'][x[-1]]) \
-    & (mapped['value'][x[-1]]>=mapped['spread'][x[-1]]):
+    and (mapped['value'][x[-1]]>=mapped['spread'][x[-1]]):
         isCorrect[x[-1]] = 1
     elif (mapped['final_result'][x[-1]]<=mapped['spread'][x[-1]]) \
-    & (mapped['value'][x[-1]]<=mapped['spread'][x[-1]]):
+    and (mapped['value'][x[-1]]<=mapped['spread'][x[-1]]):
         isCorrect[x[-1]] = 1
     else:
         isCorrect[x[-1]] = 0
@@ -496,9 +496,10 @@ for row,rs in mapped.iterrows():
     h_score = rs[9] #homescore
     a_score = rs[10] #away_score
     fin_res = rs[11] #final_result
-    correct = rs[13] #isCorrect
+    correct = rs[12] #isCorrect
     is_clos = rs[15] #isCloser
     query = f"""UPDATE main_table SET home_score = '{h_score}', away_score = '{a_score}', final_result = '{fin_res}', isCorrect = '{correct}', isCloser = '{is_clos}' WHERE id = '{Id}'"""
+    #print(query + " the query")
     cursor.execute(query)
     connection.commit()
 
