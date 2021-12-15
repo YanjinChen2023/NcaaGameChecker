@@ -6,4 +6,5 @@ pip install numpy
 pip install bs4
 pip install sportsreference
 pip install sqlalchemy
+pip install pyopenssl ndg-httpsclient pyasn1 #for possible connection error
 npm install chart.js
