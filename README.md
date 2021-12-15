@@ -8,7 +8,7 @@ It includes informations about how to run cron jobs using crontab built in on Ma
 General
 
 ```sh
-git clone https://github.com/UVAMobileDev/NcaaGameChecker.git
+git clone https://github.com/YanjinChen2023/NcaaGameChecker.git
 cd NcaaGameChecker
 ```
 
@@ -38,7 +38,7 @@ verify if it is working
 
 [TUTORIAL LINK](https://www.jcchouinard.com/python-automation-with-cron-on-mac/)
 
-Basic steps
+Basic steps:
 
 
 1.In the terminal enter `crontab -e`
@@ -49,6 +49,6 @@ Basic steps
 
 4.press esc
 
-5.enter: `:wq`(shortcut for write and quit)
+5.enter `:wq`(shortcut for write and quit)
 
 6.After writing the crontab, you will get this message: crontab: installing new crontab,which tells you created the crontab.
