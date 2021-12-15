@@ -28,11 +28,13 @@ python setup.py develop
 
 if this doesn't work then make sure to install the modules in the requirements.txt file manually
 
+## Test
+
 ### Run lambda_function.py
 
 verify if it is working
 
-### Set up cron jobs
+## Cron jobs
 
 [TUTORIAL LINK](https://www.jcchouinard.com/python-automation-with-cron-on-mac/)
 
