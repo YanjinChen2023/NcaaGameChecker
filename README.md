@@ -35,10 +35,18 @@ verify if it is working
 ### Set up cron jobs
 
 [TUTORIAL LINK](https://www.jcchouinard.com/python-automation-with-cron-on-mac/)
+
 Basic steps
+
+
 1.In the terminal enter `crontab -e`
+
 2.press i to go into edit mode
+
 3.type in `* * * * * /usr/bin/python /path/to/file/<FILENAME>.py /path/to/file/<FILENAME>.log`
+
 4.press esc
-5.press :wq(shortcut for write and quit)
-After writing the crontab, you will get this message: crontab: installing new crontab,which tells you created the crontab.
+
+5.enter: `:wq`(shortcut for write and quit)
+
+6.After writing the crontab, you will get this message: crontab: installing new crontab,which tells you created the crontab.
